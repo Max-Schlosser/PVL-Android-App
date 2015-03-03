@@ -57,4 +57,6 @@ Android: <a href="https://play.google.com/store/apps/details?id=com.github.mobil
 
 Bitte sendet alle Anmerkungen an die gesamte Gruppe, auch wenn sie nur eine Person betreffen. So bleibt jeder auf dem aktuellen Stand.
 
-Lasst uns so schnell wie möglich beginnen, denn wir haben nur 10 Wochen. Die Zeit ist also knapp bemessen.
+Lasst uns so schnell wie möglich beginnen, denn wir haben nur 12 Wochen. Die Zeit ist also knapp bemessen.
+
+<b>Ich würde mich sehr über eine rege Beteiligung aller Gruppenmitglieder freuen.</b> Ich glaube so kann das Projekt einerseits richtig interessant sein und andererseits und richtig Stress ersparen, wenn wir dann alles unter Zeitdruck machen müssen.
