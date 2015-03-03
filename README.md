@@ -25,8 +25,12 @@ Es ist ein Programm zu erstellen, welches ein Bild von der Smartphone-Kamera auf
 
 Das sind die Tools, welche wir verwenden werden um die App zu entwickeln.
 
-  <a href="https://github.com/Us3r12345/PVL-Android-App" title="GitHub für Windows">GitHub für Windows</a><br>
-  <a href="https://developer.android.com/sdk/index.html" title="Android Studio">Android Studio</a>
+<a href="https://github.com/Us3r12345/PVL-Android-App" title="GitHub für Windows">GitHub für Windows</a><br>
+<a href="https://developer.android.com/sdk/index.html" title="Android Studio">Android Studio</a>
+  
+### Optionale Tools:
+iOS: <a href="https://itunes.apple.com/us/app/ioctocat-github-for-ios-code/id669642611" title="iOctocat - GitHub for iOS - Code and Development with Git">iOctocat - GitHub for iOS - Code and Development with Git</a><br>
+Android: <a href="https://play.google.com/store/apps/details?id=com.github.mobile" title="GitHub">GitHub</a>
 
 ## Coding Conventions:
 <ul>
