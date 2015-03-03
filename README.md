@@ -11,12 +11,7 @@ Dieses Repository ist für die Programmierung unserer Android App für die PVL.
 
 ### Aufgabenstellung:
 > <p>
-> Es ist ein Programm zu erstellen, welches ein Bild von der Smartphone-Kamera aufnimmt und live auf dem Display anzeigt. Vor > der Anzeige sollen die Bilddaten modifiziert werden können. Der RGB-Farbraum soll quantisiert werden. basierend auf einer
-> Literaturrecherche sind mindes-tens zwei verschiedene Quantisierungsverfahren zu implementieren und zu vergleichen. Das 
-> mo-difizierte Bild muss gespeichert werden können. Vorkenntnisse in der App-programmierung wä-ren äußerst hilfreich.
-> Für die Programmentwicklung ist „Android Studio“ zu verwenden.
-> Alle Untersuchungen sind schriftlich zu dokumentieren. Neben der schriftlichen Arbeit sind alle Quellen (Programmcode, 
-> Texte, Testbilder) und Tools abzugeben, damit eine Reproduktion der Ergebnisse möglich ist.
+Es ist ein Programm zu erstellen, welches ein Bild von der Smartphone-Kamera aufnimmt und live auf dem Display anzeigt. Vor der Anzeige sollen die Bilddaten modifiziert werden können. Der RGB-Farbraum soll quantisiert werden. Basierend auf einer Literaturrecherche sind mindestens zwei verschiedene Quantisierungsverfahren zu implementieren und zu vergleichen. Das modifizierte Bild muss gespeichert werden können. Vorkenntnisse in der App-Programmierung wären äußerst hilfreich. Für die Programmentwicklung ist „Android Studio“ zu verwenden. <b>Alle Untersuchungen sind schriftlich zu dokumentieren. Neben der schriftlichen Arbeit sind alle Quellen (Programmcode, Texte, Testbilder) und Tools abzugeben, damit eine Reproduktion der Ergebnisse möglich ist.</b>
 > </p>
 > <p>
 > Teilaufgaben:
