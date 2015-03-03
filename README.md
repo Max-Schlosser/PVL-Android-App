@@ -27,7 +27,8 @@ Das sind die Tools, welche wir verwenden werden um die App zu entwickeln.
 
 <a href="https://windows.github.com/" title="GitHub für Windows">GitHub für Windows</a><br>
 <a href="https://developer.android.com/sdk/index.html" title="Android Studio">Android Studio</a><br>
-Microsoft Project 2013
+Microsoft Project 2013<br>
+<a href="http://mirror.ctan.org/systems/texlive/tlnet/install-tl-windows.exe" title="TeX Live">TeX Live</a>
   
 ### Optionale Tools:
 iOS: <a href="https://itunes.apple.com/us/app/ioctocat-github-for-ios-code/id669642611" title="iOctocat - GitHub for iOS - Code and Development with Git">iOctocat - GitHub for iOS - Code and Development with Git</a><br>
