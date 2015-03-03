@@ -25,7 +25,7 @@ Es ist ein Programm zu erstellen, welches ein Bild von der Smartphone-Kamera auf
 
 Das sind die Tools, welche wir verwenden werden um die App zu entwickeln.
 
-<a href="https://github.com/Us3r12345/PVL-Android-App" title="GitHub für Windows">GitHub für Windows</a><br>
+<a href="https://windows.github.com/" title="GitHub für Windows">GitHub für Windows</a><br>
 <a href="https://developer.android.com/sdk/index.html" title="Android Studio">Android Studio</a>
   
 ### Optionale Tools:
