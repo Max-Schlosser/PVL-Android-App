@@ -59,4 +59,4 @@ Bitte sendet alle Anmerkungen an die gesamte Gruppe, auch wenn sie nur eine Pers
 
 Lasst uns so schnell wie möglich beginnen, denn wir haben nur 12 Wochen. Die Zeit ist also knapp bemessen.
 
-<b>Ich würde mich sehr über eine rege Beteiligung aller Gruppenmitglieder freuen.</b> Ich glaube so kann das Projekt einerseits richtig interessant sein und andererseits und richtig Stress ersparen, wenn wir dann alles unter Zeitdruck machen müssen.
+<b>Ich würde mich sehr über eine rege Beteiligung aller Gruppenmitglieder freuen.</b> Ich glaube so kann das Projekt einerseits richtig interessant werden und andererseits und richtig Stress ersparen, bevor wir alles unter Zeitdruck machen müssen.
