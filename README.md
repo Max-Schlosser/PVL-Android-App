@@ -76,7 +76,7 @@ Android: <a href="https://play.google.com/store/apps/details?id=com.github.mobil
 
 ### Dokumentation:
 <ul>
-<li><b>Gestaltung der Dokumentation nach thesis.pdf</b> (liegt mit im Repository)</li>
+<li><b>Gestaltung der Dokumentation nach Thesis.pdf</b> (liegt mit im Repository)</li>
 <li>Die Dokumentation wird in LaTeX verfasst</li>
 </ul>
 
