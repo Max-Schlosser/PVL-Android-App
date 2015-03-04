@@ -7,6 +7,7 @@ Dieses Repository ist für die Programmierung unserer Android App für die PVL.
 <li><b>Bearbeitungszeitraum bis 22. KW, Verzögerung führt zu Punktabzug</li>
 <li>Formatierung der Quelltexte, siehe: http://www1.hft-leipzig.de/ice/Files/c-quell.txt</li>
 <li>strukturelle und inhaltliche Gestaltung der Dokumentation gemäß: http://www1.hft-leipzig.de/ice/Files/ThesisTemplate.zip</li>
+<li>Wir verwenden Android 4.x für die Entwicklung</li>
 </ul>
 
 ### Aufgabenstellung:
