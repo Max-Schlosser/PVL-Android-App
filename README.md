@@ -60,6 +60,12 @@ Android: <a href="https://play.google.com/store/apps/details?id=com.github.mobil
 <li>Kommentare werden in deutsch verfasst</li>
 </ul>
 
+### Dokumentation:
+<ul>
+<li><b>Gestaltung der Dokumentation nach thesis.pdf</b> (liegt mit im Repository)</li>
+<li>Die Dokumentation wird in LaTeX verfasst</li>
+</ul>
+
 ## Anmerkungen:
 
 Bitte sendet alle Anmerkungen an die gesamte Gruppe, auch wenn sie nur eine Person betreffen. So bleibt jeder auf dem aktuellen Stand.
