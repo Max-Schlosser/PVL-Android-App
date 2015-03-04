@@ -34,7 +34,8 @@ Microsoft Project 2013<br>
 iOS: <a href="https://itunes.apple.com/us/app/ioctocat-github-for-ios-code/id669642611" title="iOctocat - GitHub for iOS - Code and Development with Git">iOctocat - GitHub for iOS - Code and Development with Git</a><br>
 Android: <a href="https://play.google.com/store/apps/details?id=com.github.mobile" title="GitHub">GitHub</a>
 
-## Coding Conventions:
+## Konventionen:
+### Commits:
 <ul>
 <li>Häufig und oft Stand commiten und pushen</li>
   <ul>
@@ -47,6 +48,11 @@ Android: <a href="https://play.google.com/store/apps/details?id=com.github.mobil
   <li>Sonst müssen sich andere erste mit Fehlern beschäftigen, die diese nicht angehen</li>
   <li>Wenn commited werden muss (und der Code ist nicht compilierfähig), dann fehlerhaften Code auskommentieren</li>
   </ul>
+</ul>
+
+### Code:
+<ul>
+<li><b>Formatierung der Quelltexte nach http://www1.hft-leipzig.de/ice/Files/c-quell.txt kosequent durchführen</b></li>
 <li>Soviel wie möglich im Code kommentieren</li>
   <ul>
   <li>Das hilft jedem den Code schneller zuverstehen was wiederum die Einarbeitungszeit verkürzt</li>
