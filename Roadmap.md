@@ -3,4 +3,8 @@
 
 ## Version 0.1 bis 22.03.2015
 
-## Version 1.0 bis 31.05.2015 <b>(Projektende)</b>
+<p>Inhalt folgt</p>
+
+## Version 1.0 bis 31.05.2015 (Projektende)
+
+<p>Inhalt folgt</p>

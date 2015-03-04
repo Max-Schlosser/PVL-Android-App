@@ -40,7 +40,8 @@ Das sind die Tools, welche wir verwenden werden um die App zu entwickeln.
 <a href="https://developer.android.com/sdk/index.html" title="Android Studio">Android Studio</a><br>
 Microsoft Project 2013<br>
 <a href="http://mirror.ctan.org/systems/texlive/tlnet/install-tl-windows.exe" title="TeX Live">TeX Live</a><br>
-<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" title="JDK">JDK</a>
+<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" title="JDK">JDK</a><br>
+Enterprise Architect
 
 <p>Bitte installiert so schnell wie möglich die Updates für die Programme, sodass wir alle die gleiche Arbeitsgrundlage haben.</p>
   
@@ -49,19 +50,24 @@ iOS: <a href="https://itunes.apple.com/us/app/ioctocat-github-for-ios-code/id669
 Android: <a href="https://play.google.com/store/apps/details?id=com.github.mobile" title="GitHub">GitHub</a>
 
 ## Konventionen:
+### Erarbeitetes Wissen:
+<ul>
+  <li>Nutzt das Wiki auf GitHub um hart erarbeitete Erleuchtungen anderen einfach zu teilen</li>
+</ul>
+
 ### Commits:
 <ul>
-<li>Häufig und oft Stand commiten und pushen</li>
-  <ul>
-  <li>Lieber zu viele Commits als zu wenige</li>
-  <li>Das verhindert auch ständiges mergen bei arbeiten an gleicher Datei</li>
-  </ul>
-<li>In Commits wird kurz beschrieben was man gerade gemacht hat</li>
-<li>Es wird nur compilierfähiger Code commited</li>
-  <ul>
-  <li>Sonst müssen sich andere erste mit Fehlern beschäftigen, die diese nicht angehen</li>
-  <li>Wenn commited werden muss (und der Code ist nicht compilierfähig), dann fehlerhaften Code auskommentieren</li>
-  </ul>
+  <li>Häufig und oft Stand commiten und pushen</li>
+    <ul>
+      <li>Lieber zu viele Commits als zu wenige</li>
+      <li>Das verhindert auch ständiges mergen bei arbeiten an gleicher Datei</li>
+    </ul>
+  <li>In Commits wird kurz beschrieben was man gerade gemacht hat</li>
+  <li>Es wird nur compilierfähiger Code commited</li>
+    <ul>
+      <li>Sonst müssen sich andere erste mit Fehlern beschäftigen, die diese nicht angehen</li>
+      <li>Wenn commited werden muss (und der Code ist nicht compilierfähig), dann fehlerhaften Code auskommentieren</li>
+    </ul>
 </ul>
 
 ### Code:
