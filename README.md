@@ -22,6 +22,16 @@ Es ist ein Programm zu erstellen, welches ein Bild von der Smartphone-Kamera auf
 > </ul>
 > </p>
 
+Quelle: PDF "PVL_themen_dB_KMI_13.pdf" aus Mail von Herrn Strutz vom Dienstag, 3. März 2015 10:25
+
+> <p>
+> Beschreiben Sie in Ihrer Dokumentation auch, welche Schritte erforderlich sind, um Apps mit Hilfe
+> von openCV zu entwickeln und auf Smartphones zu installieren. Zeigen Sie den Zugriff auf die
+> Bilddaten anhand der Quantisierung der Helligkeits- bzw. Farbwerte.
+> </p>
+
+Quelle: Mail von Herrn Strutz vom Mittwoch, 4. März 2015 08:36
+
 ## Tools:
 
 Das sind die Tools, welche wir verwenden werden um die App zu entwickeln.
