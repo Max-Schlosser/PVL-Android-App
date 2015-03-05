@@ -1,0 +1,280 @@
+
+%---------------------------------------------
+%
+%	append_all.tex
+%
+%---------------------------------------------
+	%
+\appendix
+
+\chapter{Quelltexte und Diagramme}
+
+In den Anhang kommen längere Quelltexte, Bilder Tabellen etc., die nicht unbedingt für das Verständnis im Hauptteil erforderlich sind.
+
+	
+%-------------------------------------------------
+\chapter{Wie nutze ich \LaTeX?}
+\label{app_B}
+%----------------------------------------------
+	%
+	%
+%-------------------------------------------------
+\section{Was muss ich installieren?}
+%----------------------------------------------
+	%
+Empfehlenswert ist das Nutzen von MikTeX (http://miktex.org/). Das Installieren funktioniert im Allgemeinen problemlos. Außerdem benötigt man einen passenden Editor. TeXnicCenter (www.texniccenter.org) ist zur Zeit die beste Wahl.
+ 
+Wissenschaftliche Arbeiten enthalten typischer Weise Abbildungen von Kurven oder Diagramme. Diese sollten nicht als Raster-, sondern als Vektorgrafik eingebunden werden. Das funktioniert mit EPS (encapsulated postscript) ausgezeichnet. Damit diese richtig interpretiert werden, muss GhostScript (www.ghostscript.com) installiert sein.
+
+Für das Erstellen von Kurven, Scatter-Plots etc. ist GnuPlot (www.gnuplot.info) empfehlenswert, hat aber nichts mit \LaTeX zu tun.
+	%
+%-------------------------------------------------
+\section{Benutzen der Programme}
+%----------------------------------------------
+	%
+Nachdem die erforderlichen Programme installiert wurden, sollte mit TeXnicCenter die Beispiel-Datei \glqq thesis.tcp\grqq\ geöffnet werden. Dies ist eine TeXnicCenter-spezifische Projektdatei. Dort ist zum Beispiel festgelegt, dass die Datei \glqq thesis.tex\grqq\ die Hauptdatei des Projektes ist. Wenn man sich den Inhalt von \glqq thesis.tex\grqq\ ansieht, findet man einige Zeilen wie \verb+\input{xyz}+ wobei dann {\tt xyz.tex} eine andere \LaTeX-Datei ist, welche an dieser Stelle eingebunden wird.
+
+Damit TeXnicCenter die \LaTeX-Dateien richtig in ein druckbares Format übersetzt, sind einmalig ein paar Einstellungen erforderlich. Mit Alt+F7 öffnet man ein Fenster, in dem man die Ausgabeprofile definieren kann. Zwei sind besonders wichtig. Das erste ist {\tt Latex => DVI}. DVI ist ein geräteunabhängiges Druckformat und kann z.B. mit YAP angesehen werden. YAP ist schon im MikTeX-Paket enthalten.
+Die erforderlichen Einstellungen sind in den {\bf Abbildungen \ref{fig_latex2dvi_tex}} bis {\bf \ref{fig_latex2dvi_viewer}} zu sehen. 
+	%
+\begin{figure}%[hbt]
+  \hfil \includegraphics[scale=0.7]{./Bilder/latex2dvi_tex.eps}
+  \caption{\label{fig_latex2dvi_tex}TeX-Einstellungen für das Ausgabeprofil {\tt Latex => DVI} }
+\end{figure}
+	%
+	%
+\begin{figure}%[hbt]
+  \hfil \includegraphics[scale=0.7]{./Bilder/latex2dvi_viewer.eps}
+  \caption{\label{fig_latex2dvi_viewer}Viewer-Einstellungen für das Ausgabeprofil {\tt Latex => DVI} }
+\end{figure}
+	%
+Selbstverständlich muss man die Pfade an die auf dem verwendeten Computer gültigen anpassen, ebenso die MikTeX-Version.
+
+Wenn die finale Version des Dokumentes fertiggestellt ist, wechselt man zum Profil {\tt Latex => PS => PDF}, um ein PDF-Dokument zu generieren.
+Die TeX-Einstellungen sind dabei die gleichen. Die {\bf Abbildungen \ref{fig_latex2ps2pdf_dvips}} und {\bf \ref{fig_latex2dvi_ghost}} zeigen die Einstellungen für die Konvertierungen DVI/EPS und EPS/PDF.
+	%
+\begin{figure}%[hbt]
+  \hfil \includegraphics[scale=0.7]{./Bilder/latex2PS2PDF_Nachb_DviPs.eps}
+  \caption{\label{fig_latex2ps2pdf_dvips}DviPS-Einstellungen für das Ausgabeprofil {\tt Latex => PS => PDF} }
+\end{figure}
+	%
+	%
+\begin{figure}%[hbt]
+  \hfil \includegraphics[scale=0.7]{./Bilder/latex2PS2PDF_Nachb_Ghost.eps}
+  \caption{\label{fig_latex2dvi_ghost}GhostScript-Einstellungen für das Ausgabeprofil {\tt Latex => PS => PDF} }
+\end{figure}
+	%
+Da die Parameter für GhostScript nicht vollständig in der Abbildung zu sehen sind, hier die komplette Liste:
+\begin{quote}
+  {\tt -sPAPERSIZE=a4 -dSAFER -dBATCH -dNOPAUSE -sDEVICE=pdfwrite \\
+       -dPDFSETTINGS=/prepress -dMaxSubsetPct=100 -dSubsetFonts=true\\
+       -dEmbedAllFonts=true -sOutputFile=\grqq\%bm.pdf\grqq\ -c save pop -f\grqq\%bm.ps\grqq} 
+ \end{quote}
+	
+	
+Als Betrachter wird zum Beispiel der Acrobat Reader eingesetzt (\Abb{fig_latex2ps2pdf_viewer}).
+	%
+\begin{figure}%[hbt]
+  \hfil \includegraphics[scale=0.7]{./Bilder/latex2PS2PDF_viewer.eps}
+  \caption{\label{fig_latex2ps2pdf_viewer}Viewer-Einstellungen für das Ausgabeprofil {\tt Latex => PS => PDF} }
+\end{figure}
+	%
+
+Der große Vorteil von EPS für Diagramme etc. kehrt sich leider um für Rastergrafiken. Formate wie *.png oder *.tiff oder ähnliches werden nicht unterstützt. Die hier im Text gezeigten Screenshots wurden mit Photoshop ins EPS-Format konvertiert. Man kann auch zum Beispiel GIMP (www.gimp.org) zum Konvertieren nutzen. 
+
+%--------------------------------------------------------------
+\section{Hinweise zum \LaTeX-Befehlssatz}
+%
+%--------------------------------------------------------------
+\subsection{Formatierung}
+	%
+Bei \LaTeX ist ``Times New Roman bereits die Standardeinstellung. Die Schriftgröße, das Papierformat, die Sprache und die doppelseitige Formatierung werden zu Beginn des Dokumentes mit	\verb+\documentclass[12pt,a4paper,ngerman,twoside]{report}+ festgelegt. Die Angabe der Sprache ist wichtig für die automatische Silbentrennung, welche bei \LaTeX standardmäßig aktiviert ist. Probleme gibt es damit, wenn Wörter mit Umlauten am Ende einer Zeile stehen. Dann benötigt \LaTeX einen Trennvorschlag (z.B. \verb+Gesamt\-über\-sicht+), ansonsten wird das Wort nicht getrennt und auf den Seitenrand geschrieben.  
+Der Zeilenabstand ist in diesem Dokument auf 1.1 gesetzt mit 
+ (\verb+\renewcommand{\baselinestretch}{1.1}+).
+
+%--------------------------------------------------------------
+\subsection{Einbinden von Tabellen und Abbildungen}
+	%
+Das vorzeichensymmetrische Quantisieren wird durch die Schwellen $\pm{}T1$, $\pm{}T2$, $\pm{}T3$ festgelegt, welche
+f{\"u}r alle Differenzen gelten. \Tabe{tab_thresholds} zeigt entsprechende Beispiele.
+	%
+\begin{table}
+\centering % Zentrieren der Tabelle
+  \caption{\label{tab_thresholds}Beispiel für das Einbinden von Tabellen}
+\begin{tabular}{|c|c|c|c|}
+  \hline
+  Bereich & $Q_i$ & Bereich & $Q_i$\\
+  \hline
+  $\infty$ .. -T3 & -4 & T3 .. $\infty$ &4 \\
+  -T3+1 .. -T2    & -3 & T2 .. T3-1     &3 \\
+  -T2+1 .. -T1    & -2 & T1 .. T2-1     &2 \\
+  -T1+1 .. -1     & -1 &  1 .. T1-1     &1 \\
+  0               &  0 &                & \\
+  \hline
+\end{tabular}
+\end{table}
+	%
+	
+Abbildungen werden von \LaTeX\ automatisch entweder am oberen oder unteren Rand der Seite platziert. Die Referenz auf ein Bild muss gesetzt werden bevor das Bild eingebettet wird (siehe \Abb{fig_template}).
+	%
+\begin{figure}%[hbt]
+  \hfil \includegraphics{template.eps}
+  \caption{\label{fig_template}Beispiel für das Einbinden von Bildern}
+\end{figure}
+	%
+Dadurch ist garantiert, dass das Bild in der Nähe der Referenz erscheint, und frühestens auf derselben Seite wie die Referenz.
+	%
+%-------------------------------------------------
+%
+\subsection{Einbinden von Formeln}
+%-------------------------------------------
+	%
+Dies ist eine Formel mit mehreren Zeilen, die am Gleichheitszeichen ausgerichtet sind
+	%
+\begin{align}\label{eq_abc}
+	CX' &= 9 \cdot (9 \cdot Q1+Q2)+Q3 \\
+	CX  &= |CX'| \nonumber\\ 
+	SIGN &= sgn(CX') \;.
+\end{align}
+	%
+Man beachte, dass die zweite Zeile keine Gleichungsnummer hat. Das Platzieren von Labels $\backslash${\tt label}\{{\tt xuz}\} ermöglicht auch Verweise auf Formeln, wie z.B.\ Gleichung (\ref{eq_abc}).  Es ist auch möglich, mit {\tt$\backslash$begin}\{{\tt align*}\} für alle Zeilen das Nummerieren zu unterbinden:
+	%
+\begin{align*}\label{EQ_PREDERR}
+\varepsilon = \left\{
+		\begin{array}{lll}
+		\hat{x} - x &:& SIGN < 0 \\
+		x - \hat{x} &:& SIGN \geq 0
+		\end{array}
+	\right.
+	\;.
+\end{align*}
+	%
+Wenn eine Formel am Satzende steht, dann darf der Satzpunkt hinter der Formel nicht vergessen werden.
+%-------------------------------------------------
+%
+\section{Literaturverzeichnis}
+	%
+Dieses Stylefile unterscheidet nicht zwischen Literatur- und Quellenverzeichnis.
+Zum Referenzieren von Literatur wird ein System vorgeschlagen, dass die ersten drei Buchstaben des Nachnamens des Erstautors und die beiden letzten Ziffern des Jahres der Veröffentlichung enthalten \cite{Fli93}. Der Verweis erfolgte in diesem Fall mit \verb+\cite{Fli93}+. Die Literatureinträge sind dann alphabetisch zu sortieren. 
+%Alternative ist auch ein Nummerieren in der Reihenfolge der Referenzierungen möglich. Die erste Variante hat den Vorteil, dass der Leser aus der Angabe schon nach einmaligem Nachschlagen ableiten kann, um welche Literaturangabe es sich handelt. 
+
+
+	
+%-------------------------------------------------
+\chapter{Kriterien zur Bewertung von Abschlussarbeiten}
+\label{app_kriterien}
+%----------------------------------------------
+	%
+Im Folgenden sind einzelne Punkte aufgelistet, die zur Bewertung einer Abschlussarbeit heran gezogen werden könnten.
+
+%-------------------------------------------------
+\section{Bewertung der schriftlichen Arbeit}
+%
+
+\paragraph{Form}
+\begin{closelist}
+  \item Layout-Vorgaben wurden eingehalten
+  \item Satzbau/Fehlerfreiheit/Ausdruck
+	\item Länge der Arbeit ist angemessen
+	\item Vollständige Tabellen und Grafiken (Tabellenköpfe, Legenden)
+	\item Grafiken sind textuell erläutert
+	\item Wissenschaftliche Ausdrucksweise
+\end{closelist}
+
+\paragraph{Aufbau und Inhalt}
+\begin{closelist}
+	\item Ausgewogene Gliederung
+	\item Inhaltlich richtige Darstellung
+	\item Eigenleistung erkennbar
+ \item Bearbeitung zeigt, dass fundierte/aktuelle Kenntnisse in der Thematik erworben wurden
+ \item Gestellte Aufgabe ist vollständig gelöst/behandelt
+	\item Alle Randbedingungen sind dargestellt
+	\item Zielsetzung, Vorgehen und Bedeutung des Themas sind klar beschrieben
+	\item Alle wichtigen Begriffe sind definiert, Grundlagen ausgewogen dargestellt
+	\item Ergebnisse der Arbeit sind klar herausgearbeitet und interpretiert
+	\item Entscheidungsfindung bei der Auswahl von Methoden oder Verfahrensweisen ist erkennbar
+\end{closelist}
+
+\paragraph{Zitierweise/Nachweisbarkeit}
+\begin{closelist}
+	\item Alle Übernahmen sind zitiert, alle Thesen/Behauptungen belegt
+	\item Aktuelle Literatur / relevante Autoren
+	\item Einheitliche Zitierweise
+  \item Vollständiges und richtiges Literaturverzeichnis
+\end{closelist}
+	%
+%-------------------------------------------------
+\section{Bewertung der Arbeitsweise und der Ergebnisse}
+%
+%-------------------------------------------------
+\paragraph{Schwierigkeit der Aufgabenstellung}
+%
+\begin{closelist}
+	\item Aufgabe ist komplex
+	\item Neuland/keine Vorarbeiten waren vorhanden
+\end{closelist}
+
+\paragraph{Eigenständigkeit}
+\begin{closelist}
+	\item adäquate Literatur wurde eigenständig recherchiert
+	\item es wurde überwiegend selbständig ohne Korrekturen des Betreuers gearbeitet
+	\item geeignete Methoden wurden selbständig ausgewählt
+  \item über alternative Lösungswege wurde nachgedacht
+  \item Kontakte zur externen Personen wurden eigenständig geknüpft
+	\item Kreativität/eigene Ideen wurden eingebracht
+\end{closelist}
+
+\paragraph{Resultat (Software, Demonstrator, Hardware)}
+\begin{closelist}
+	\item ist voll funktionstüchtig
+	\item ist sauber ausgeführt (z.B. Kommentare bei Software)
+	\item Abgegebene Unterlagen ermöglichen eine Reproduktion
+ der Ergebnisse
+\end{closelist}
+
+\paragraph{Sonstiges}
+\begin{closelist}
+	\item wissenschaftliche Arbeitsweise erkennbar
+	\item Hinweise des/der Betreuer wurden angenommen
+	\item die erreichten Ergebnisse passen zur Aufgabenstellung
+	\item Ergebnisse sind für weitere Arbeit der Arbeitsgruppe relevant
+\end{closelist}
+
+	
+%-------------------------------------------------
+\chapter{Information zur Abgabe von Abschlussarbeiten}
+\label{app_abgabe}
+%----------------------------------------------
+	%
+
+Gemeinsam mit der schriftlichen Arbeit ist eine CD-ROM abzugeben. Im Sinne der Prinzipien zur Sicherung der guten wissenschaftlichen Praxis muss diese CD alle Daten und Informationen enthalten, welche erforderlich sind, um die Ergebnisse der Arbeit zu reproduzieren. Es wird folgende Verzeichnisstruktur empfohlen:
+\begin{itemize}
+	\item Thesis
+	\begin{itemize}
+		\item Hier stehen alle Quellen (*.tex, *.sty, *.doc, *.txt), welche für das Anfertigen der schriftlichen Arbeit genutzt wurden.
+		\item Außerdem sind hier alle Bilder, welche in der Arbeit zu sehen sind, in einem geeigneten Format (EPS, oder hochaufgelöst) abgelegt.
+		\item Hinweise, mit welchem Textverarbeitungssystem (inkl. Tools) die Arbeit geschrieben wurde
+	\end{itemize}
+	\item Testdaten
+	\begin{itemize}
+		\item alle Daten, welche für die Untersuchungen  verwendet wurden
+	\end{itemize}
+	\item Quellcode
+	\begin{itemize}
+		\item Quellcode, der zu Beginn der Arbeit zur Verfügung stand
+		\item externer Quellcode, der eingebunden wurde
+		\item Quellcode des fertigen Programms / der fertigen Programme
+	\end{itemize}
+	\item Untersuchungen
+	\begin{itemize}
+		\item Ergebnisse: Listen (*.txt, *.xls, ...) mit den numerischen Ergebnissen der Untersuchungen
+		\item Batchfiles (*.bat, Programmaufrufe mit entsprechenden Parametern und Optionen), mit denen die Ergebnisse erneut erzeugt werden können
+		\item Typischer Weise gibt es hier entsprechend des Themas weitere Unterverzeichnisse.
+	\end{itemize}
+	\item Literatur
+	\begin{itemize}
+		\item alle Artikel und andere Quellen (*.pdf, *.doc, *.html, ...), welche während der Recherche gefunden und in der Arbeit zitiert wurden  
+	\end{itemize}
+\end{itemize}
+Ferner muss die CD eine ReadMe.txt-Datei enthalten, welche Hinweise zum Inhalt gibt und auch den Inhalt von evtl. anderen Ordnern erläutert. Außerdem ist die Thesis als PDF-File im Wurzelverzeichnis abzulegen.
+	%
