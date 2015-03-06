@@ -8,7 +8,7 @@ Ich habe mir darüber Gedanken gemacht, was wir in dieser Zeit alles schaffen k�
 
 Das Ziel ist die primitivste Umsetzung der Aufgaben. In nachfolgenden Versionen können wir diese dann weiter verbessern.<br>
   <ul>
-    <li>Bild der Kamera auf dem Display anzeigen</li>
+    <li><del>Bild der Kamera auf dem Display anzeigen</del></li>
     <li>Button um Bild speichern zu können</li>
     <li>Bild auf Smartphone speichern</li>
   </ul>
