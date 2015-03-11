@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:id="@+id/listFotoImage"
+        android:src="@color/bright_foreground_disabled_material_light" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="@android:dimen/app_icon_size"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Foto Name"
+        android:id="@+id/listFotoName"
+        android:textSize="@dimen/abc_text_size_display_1_material"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_vertical|center_horizontal" />
+
+</LinearLayout>
