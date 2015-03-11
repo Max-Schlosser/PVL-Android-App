@@ -25,35 +25,6 @@
                 android:layout_height="fill_parent">
 
                 <LinearLayout
-                    android:id="@+id/tabFotoList"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:orientation="vertical"
-                    android:layout_gravity="center_horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
-                        android:text="FotoList"
-                        android:id="@+id/fotoListText"
-                        android:layout_gravity="center_horizontal"
-                        android:textSize="@dimen/abc_text_size_display_3_material" />
-
-                    <ScrollView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/scrollView2" >
-
-                        <ListView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/fotoListView" />
-                    </ScrollView>
-
-                </LinearLayout>
-
-                <LinearLayout
                     android:id="@+id/tabFotoMaker"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
@@ -118,6 +89,35 @@
                             </LinearLayout>
                         </LinearLayout>
                     </ScrollView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tabFotoList"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
+                        android:text="FotoList"
+                        android:id="@+id/fotoListText"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="@dimen/abc_text_size_display_3_material" />
+
+                    <ScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/scrollView2" >
+
+                        <ListView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/fotoListView" />
+                    </ScrollView>
+
                 </LinearLayout>
 
             </FrameLayout>

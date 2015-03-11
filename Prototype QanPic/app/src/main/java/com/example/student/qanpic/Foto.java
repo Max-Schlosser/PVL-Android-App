@@ -23,7 +23,7 @@ public class Foto
         return name;
     }
 
-    public Uri getFotoImgae()
+    public Uri getFotoImage()
     {
         return foto;
     }

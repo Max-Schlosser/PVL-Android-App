@@ -25,7 +25,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
-import java.lang.reflect.Array;
 import java.util.List;
 
 public class MainActivity extends ActionBarActivity {
@@ -73,12 +72,10 @@ public class MainActivity extends ActionBarActivity {
                 builder.setItems(options, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        if (which == 0)
-                        {
+                        if (which == 0) {
                             takeFoto();
                         }
-                        if (which == 1)
-                        {
+                        if (which == 1) {
                             chooseFoto();
                         }
                     }
@@ -206,7 +203,7 @@ public class MainActivity extends ActionBarActivity {
             TextView name = (TextView) findViewById(R.id.listFotoName);
             name.setText(currentFoto.getFotoName());
             ImageView fotoListItem = (ImageView) findViewById(R.id.listFotoImage);
-            fotoListItem.setImageURI(currentFoto.getFotoImgae());
+            fotoListItem.setImageURI(currentFoto.getFotoImage());
 
             return view;
         }
