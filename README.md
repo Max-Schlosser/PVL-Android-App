@@ -32,6 +32,19 @@ Quelle: PDF "PVL_themen_dB_KMI_13.pdf" aus Mail von Herrn Strutz vom Dienstag, 3
 
 Quelle: Mail von Herrn Strutz vom Mittwoch, 4. März 2015 08:36
 
+## Aufgabenverteilung:
+
+<p>
+  <ul>
+    <li>Tom: Funktionalität der App testen</li>
+    <li>Tom: Eine Liste von gespeicherten Bildern soll erstellt werden</li>
+    <li>Florian: Auswahldialog & Funktionalität: Bild von Kamera oder aus Galerie</li>
+    <li>Björn: Dokumentation bearbeiten</li>
+    <li>Max: .gitignore erstellen</li>
+    <li>Stephan: Projekt richtig benennen</li>
+  </ul>
+</p>
+
 ## Tools:
 
 Das sind die Tools, welche wir verwenden werden um die App zu entwickeln.
