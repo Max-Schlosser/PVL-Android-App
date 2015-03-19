@@ -40,8 +40,6 @@ Quelle: Mail von Herrn Strutz vom Mittwoch, 4. März 2015 08:36
     <li>Tom: Eine Liste von gespeicherten Bildern soll erstellt werden</li>
     <li>Florian: Auswahldialog & Funktionalität: Bild von Kamera oder aus Galerie</li>
     <li>Björn: Dokumentation bearbeiten</li>
-    <li>Max: .gitignore erstellen</li>
-    <li>Max: abgearbeitete Aufgaben im Wiki hinterlegen</li>
     <li>Stephan: Projekt richtig benennen</li>
   </ul>
 </p>
