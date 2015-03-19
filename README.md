@@ -55,11 +55,13 @@ Das sind die Tools, welche wir verwenden werden um die App zu entwickeln.
 Microsoft Project 2013<br>
 <a href="http://mirror.ctan.org/systems/texlive/tlnet/install-tl-windows.exe" title="TeX Live">TeX Live</a><br>
 <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" title="JDK">JDK</a>
+<a href="http://www.sublimetext.com/3" title="Sublime Text 3">Sublime Text 3</a>
 
 <p>Bitte installiert so schnell wie möglich die Updates für die Programme, sodass wir alle die gleiche Arbeitsgrundlage haben.</p>
   
 ### Optionale Tools:
-iOS: <a href="https://itunes.apple.com/us/app/ioctocat-github-for-ios-code/id669642611" title="iOctocat - GitHub for iOS - Code and Development with Git">iOctocat - GitHub for iOS - Code and Development with Git</a><br>
+<p>iOS: <a href="https://itunes.apple.com/us/app/ioctocat-github-for-ios-code/id669642611" title="iOctocat - GitHub for iOS - Code and Development with Git">iOctocat - GitHub for iOS - Code and Development with Git</a>
+iOS: <a href="https://itunes.apple.com/us/app/id383577124" title="Textastic Code Editor">Textastic Code Editor</a></p>
 Android: <a href="https://play.google.com/store/apps/details?id=com.github.mobile" title="GitHub">GitHub</a>
 
 ## Konventionen:
