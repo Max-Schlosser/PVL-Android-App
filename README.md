@@ -60,7 +60,7 @@ Microsoft Project 2013<br>
 ### Optionale Tools:
 iOS: <a href="https://itunes.apple.com/us/app/ioctocat-github-for-ios-code/id669642611" title="iOctocat - GitHub for iOS - Code and Development with Git">iOctocat - GitHub for iOS - Code and Development with Git</a><br>
 iOS: <a href="https://itunes.apple.com/us/app/id383577124" title="Textastic Code Editor">Textastic Code Editor</a><br>
-iOS: <a href="https://itunes.apple.com/us/app/id896694807" title="Working Copy">Working Copy</a>
+iOS: <a href="https://itunes.apple.com/us/app/id896694807" title="Working Copy">Working Copy</a><br>
 Android: <a href="https://play.google.com/store/apps/details?id=com.github.mobile" title="GitHub">GitHub</a>
 
 ## Konventionen:
