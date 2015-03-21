@@ -6,6 +6,7 @@ import android.text.Html;
 
 /**
  * Created by student on 06.03.2015.
+ * Um Foto-Objekte zu erzeugen, die in der ListView angezeigt werden.
  */
 public class Foto
 {
