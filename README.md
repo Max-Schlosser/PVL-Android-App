@@ -40,8 +40,8 @@ Quelle: Mail von Herrn Strutz vom Mittwoch, 4. März 2015 08:36
     <li>Tom: Eine Liste von gespeicherten Bildern soll erstellt werden</li>
     <li>Florian: Auswahldialog & Funktionalität: Bild von Kamera oder aus Galerie</li>
     <li>Björn: Dokumentation bearbeiten</li>
-    <li>Max: Projekt richtig benennen</li>
-    <li>Stehphan: Code kommentieren</li>
+    <li>Stephan: Projekt richtig benennen</li>
+    <li>Stephan: Code kommentieren</li>
   </ul>
 </p>
 
@@ -53,7 +53,7 @@ Das sind die Tools, welche wir verwenden werden um die App zu entwickeln.
 <a href="https://developer.android.com/sdk/index.html" title="Android Studio">Android Studio</a><br>
 Microsoft Project 2013<br>
 <a href="http://mirror.ctan.org/systems/texlive/tlnet/install-tl-windows.exe" title="TeX Live">TeX Live</a><br>
-<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" title="JDK">JDK</a>
+<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" title="JDK">JDK</a><br>
 <a href="http://www.sublimetext.com/3" title="Sublime Text 3">Sublime Text 3</a>
 
 <p>Bitte installiert so schnell wie möglich die Updates für die Programme, sodass wir alle die gleiche Arbeitsgrundlage haben.</p>
