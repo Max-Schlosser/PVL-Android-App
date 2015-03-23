@@ -36,8 +36,8 @@ Quelle: Mail von Herrn Strutz vom Mittwoch, 4. März 2015 08:36
 
 <p>
   <ul>
-    <li>Tom: Funktionalität der App testen</li>
-    <li>Tom: Eine Liste von gespeicherten Bildern soll erstellt werden</li>
+    <li>Tom: Funktionalität der App testen z.Bsp. Kamerafunktion (Aufgabe endet nach erfolgreichen Testen)</li>
+    <li>Tom: Eine Liste von gespeicherten Bildern soll erstellt werden (Timestamp-Funktion recherchieren, einfügen und kommentieren)</li>
     <li>Florian: Auswahldialog & Funktionalität: Bild von Kamera oder aus Galerie</li>
     <li>Björn: Dokumentation bearbeiten</li>
     <li>Stephan: Projekt richtig benennen</li>
