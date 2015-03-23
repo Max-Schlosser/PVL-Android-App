@@ -2,15 +2,18 @@
 Dieses Repository ist für die Programmierung unserer Android App für die PVL.
 
 ## Aufgabe:
+
 ### Rahmenbedingungen:
+
 <ul>
-<li><b>Bearbeitungszeitraum bis 22. KW, Verzögerung führt zu Punktabzug</li>
-<li>Formatierung der Quelltexte, siehe: http://www1.hft-leipzig.de/ice/Files/c-quell.txt</li>
-<li>strukturelle und inhaltliche Gestaltung der Dokumentation gemäß: http://www1.hft-leipzig.de/ice/Files/ThesisTemplate.zip</li>
-<li>Wir verwenden Android 4.x für die Entwicklung</li>
+  <li><b>Bearbeitungszeitraum bis 22. KW, Verzögerung führt zu Punktabzug</li>
+  <li>Formatierung der Quelltexte, siehe: http://www1.hft-leipzig.de/ice/Files/c-quell.txt</li>
+  <li>strukturelle und inhaltliche Gestaltung der Dokumentation gemäß: http://www1.hft-leipzig.de/ice/Files/ThesisTemplate.zip</li>
+  <li>Wir verwenden Android 4.x für die Entwicklung</li>
 </ul>
 
 ### Aufgabenstellung:
+
 > <p>
 Es ist ein Programm zu erstellen, welches ein Bild von der Smartphone-Kamera aufnimmt und live auf dem Display anzeigt. Vor der Anzeige sollen die Bilddaten modifiziert werden können. Der RGB-Farbraum soll quantisiert werden. Basierend auf einer Literaturrecherche sind mindestens zwei verschiedene Quantisierungsverfahren zu implementieren und zu vergleichen. Das modifizierte Bild muss gespeichert werden können. Vorkenntnisse in der App-Programmierung wären äußerst hilfreich. Für die Programmentwicklung ist „Android Studio“ zu verwenden. <b>Alle Untersuchungen sind schriftlich zu dokumentieren. Neben der schriftlichen Arbeit sind alle Quellen (Programmcode, Texte, Testbilder) und Tools abzugeben, damit eine Reproduktion der Ergebnisse möglich ist.</b>
 > </p>
@@ -59,13 +62,16 @@ Microsoft Project 2013<br>
 <p>Bitte installiert so schnell wie möglich die Updates für die Programme, sodass wir alle die gleiche Arbeitsgrundlage haben.</p>
   
 ### Optionale Tools:
+
 iOS: <a href="https://itunes.apple.com/us/app/ioctocat-github-for-ios-code/id669642611" title="iOctocat - GitHub for iOS - Code and Development with Git">iOctocat - GitHub for iOS - Code and Development with Git</a><br>
 iOS: <a href="https://itunes.apple.com/us/app/id383577124" title="Textastic Code Editor">Textastic Code Editor</a><br>
 iOS: <a href="https://itunes.apple.com/us/app/id896694807" title="Working Copy">Working Copy</a><br>
 Android: <a href="https://play.google.com/store/apps/details?id=com.github.mobile" title="GitHub">GitHub</a>
 
 ## Konventionen:
+
 ### Commits:
+
 <ul>
 <li>Häufig und oft Stand commiten und pushen</li>
   <ul>
@@ -81,6 +87,7 @@ Android: <a href="https://play.google.com/store/apps/details?id=com.github.mobil
 </ul>
 
 ### Code:
+
 <ul>
 <li><b>Formatierung der Quelltexte nach http://www1.hft-leipzig.de/ice/Files/c-quell.txt kosequent durchführen</b></li>
 <li>Soviel wie möglich im Code kommentieren</li>
@@ -91,6 +98,7 @@ Android: <a href="https://play.google.com/store/apps/details?id=com.github.mobil
 </ul>
 
 ### Dokumentation:
+
 <ul>
 <li><b>Gestaltung der Dokumentation nach Thesis.pdf</b> (liegt mit im Repository)</li>
 <li>Die Dokumentation wird in LaTeX verfasst</li>
@@ -100,6 +108,6 @@ Android: <a href="https://play.google.com/store/apps/details?id=com.github.mobil
 
 Bitte sendet alle Anmerkungen an die gesamte Gruppe, auch wenn sie nur eine Person betreffen. So bleibt jeder auf dem aktuellen Stand.
 
-Lasst uns so schnell wie möglich beginnen, denn wir haben nur 10 Wochen. Die Zeit ist also knapp bemessen.
+Lasst uns so schnell wie möglich beginnen, denn wir haben <b>nur noch 10 Wochen</b>. Die Zeit ist also knapp bemessen.
 
 <b>Ich würde mich sehr über eine rege Beteiligung aller Gruppenmitglieder freuen.</b> Ich glaube so kann das Projekt einerseits richtig interessant werden und andererseits und richtig Stress ersparen, bevor wir alles unter Zeitdruck machen müssen.
