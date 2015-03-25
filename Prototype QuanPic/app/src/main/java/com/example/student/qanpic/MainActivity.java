@@ -102,6 +102,7 @@ public class MainActivity extends ActionBarActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // save button is enable if the text is not equal to null or only consist of spaces
                 saveButton.setEnabled(!name.getText().toString().trim().equals(""));
             }
 
@@ -118,6 +119,8 @@ public class MainActivity extends ActionBarActivity {
                 Toast.makeText(getApplicationContext(), "Das Bild wurde gespeichert.", Toast.LENGTH_SHORT).show();
                 populateList();
                 fotos.add(new Foto(name.getText().toString(), imageUri));
+
+                // adapter foto insert
             }
         });
 
@@ -126,6 +129,8 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Die Analyse war erfolgreich.", Toast.LENGTH_SHORT).show();
+
+                // quantisation have to implement here
             }
         });
     }
@@ -144,6 +149,8 @@ public class MainActivity extends ActionBarActivity {
     {
         ArrayAdapter<Foto> adapter = new FotoListAdapter();
         listView.setAdapter(adapter);
+
+        // List of taken pictures
     }
 
     // Stellt die Option dar, dass Foto aufzunehmen.
