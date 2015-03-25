@@ -36,7 +36,7 @@ public class MainActivity extends ActionBarActivity {
     ListView listView;
     List<Foto> fotos;
     Uri imageUri;
-    File bildFile = new File(Environment.getExternalStorageDirectory() + "\\Fotoapp\\bild.png");
+    File bildFile = new File(Environment.getExternalStorageDirectory() + "\\Fotoapp" + SimpleDateFormat("yyyyMMddhhmmss").format(new Date()) + "\\bild.png"); //create unique file with timestamp
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
