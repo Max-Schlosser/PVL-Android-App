@@ -1,4 +1,4 @@
-package com.example.student.qanpic;
+package com.example.StephanWagener.quanpic;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

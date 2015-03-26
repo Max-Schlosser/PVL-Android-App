@@ -1,11 +1,9 @@
-package com.example.student.qanpic;
+package com.example.StephanWagener.quanpic;
 
-import android.media.Image;
 import android.net.Uri;
-import android.text.Html;
 
 /**
- * Created by student on 06.03.2015.
+ * Created by StephanWagener on 06.03.2015.
  * Um Foto-Objekte zu erzeugen, die in der ListView angezeigt werden.
  */
 public class Foto
