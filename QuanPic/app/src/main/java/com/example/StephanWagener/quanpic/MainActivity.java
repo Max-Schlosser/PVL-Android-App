@@ -115,8 +115,8 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Das Bild wurde gespeichert.", Toast.LENGTH_SHORT).show();
+                fotos.add(new Foto(name.getText().toString(), imageUri, bildFile));
                 populateList();
-                fotos.add(new Foto(name.getText().toString(), imageUri));
 
                 // adapter foto insert
             }
@@ -184,18 +184,14 @@ public class MainActivity extends ActionBarActivity {
     }
 
     // Private Klasse, die die Liste mit der ListView aus dem Layout verbindet.
-    private class FotoListAdapter extends ArrayAdapter <Foto>
-    {
-        public FotoListAdapter ()
-        {
+    private class FotoListAdapter extends ArrayAdapter <Foto> {
+        public FotoListAdapter() {
             super(MainActivity.this, R.layout.fotolist_item, fotos);
         }
 
         @Override
-        public View getView(int position, View view, ViewGroup parent)
-        {
-            if (view == null)
-            {
+        public View getView(int position, View view, ViewGroup parent) {
+            if (view == null) {
                 view = getLayoutInflater().inflate(R.layout.fotolist_item, parent, false);
             }
             Foto currentFoto = fotos.get(position);
