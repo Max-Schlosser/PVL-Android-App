@@ -37,7 +37,7 @@ public class MainActivity extends ActionBarActivity {
     ListView listView;
     List<Foto> fotos;
     Uri imageUri;
-    File bildFile = new File(Environment.getExternalStorageDirectory() + "\\Fotoapp\\bild.png");
+    File bildFile = new File(Environment.getExternalStorageDirectory() + "\\Fotoapp\\" + System.currentTimeMillis() +".png" );
 
     // Initialisieren erforderlicher Elemente beim Öffnen der App.
     @Override
