@@ -1,6 +1,6 @@
 package com.example.StephanWagener.quanpic;
 
-// Importe für benutzte Funktionalitäten
+// Imports needed for used functionalities.
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -26,10 +26,10 @@ import android.widget.Toast;
 import java.io.File;
 import java.util.List;
 
-// Main Class. Verbindet Layout mit Implementierung.
+// Main Class. Links layout and implementation.
 public class MainActivity extends ActionBarActivity {
 
-    // Globale Variablen.
+    // Global variables
     Button saveButton;
     Button analyseButton;
     TextView name;
@@ -39,20 +39,20 @@ public class MainActivity extends ActionBarActivity {
     Uri imageUri;
     File bildFile = new File(Environment.getExternalStorageDirectory() + "\\Fotoapp\\" + System.currentTimeMillis() +".png" );
 
-    // Initialisieren erforderlicher Elemente beim Öffnen der App.
+    // Initializing required elements when starting the application.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // GUI Elemente initialisieren anhand der vergebenen Ids im Layout.
+        // Initializing GUI elements through the given layout ID.
         saveButton = (Button) findViewById(R.id.buttonSave);
         analyseButton = (Button) findViewById(R.id.buttonAnalyse);
         name = (TextView) findViewById(R.id.fotoName);
         foto = (ImageView) findViewById(R.id.imageView);
         listView = (ListView) findViewById(R.id.fotoListView);
 
-        // Speichern-Button deaktivieren und Tabs initialisieren.
+        // Disabling save button and initializing tabs.
         saveButton.setEnabled(false);
         TabHost fotoTabHost = (TabHost) findViewById(R.id.tabHost);
         fotoTabHost.setup();
@@ -67,7 +67,7 @@ public class MainActivity extends ActionBarActivity {
         tabSpec.setIndicator("FotoList");
         fotoTabHost.addTab(tabSpec);
 
-        // Funktionalitäten, die beim Klicken auf das Image ausgeführt werden sollen.
+        // Determining functionalities to be executed when the image is clicked.
         foto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,8 +90,8 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
-        // Prüfen auf einen nicht leeren oder nur ausschließlich aus Leerzeichen bestehenden Text.
-        // Schlägt diese Prüfung fehl, dann wird der Button nicht aktiv.
+        // Checking for an empty string or one that consists only of whitespaces.
+        // If that is the case, the button does not get activated.
         name.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -110,7 +110,7 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
-        // Funktionalitäten des Speichern-Button.
+        // Save-button functionalities.
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -122,7 +122,7 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
-        // Funktionalitäten des Analysieren-Button.
+        // Analyze-button functionalities.
         analyseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -133,7 +133,7 @@ public class MainActivity extends ActionBarActivity {
         });
     }
 
-    // Stellt die Option dar, dass Foto aus der Gallerie auszuwhlen.
+    // Displays the option to choose a foto from the gallery.
     public void chooseFoto()
     {
         Intent intent = new Intent();
@@ -142,7 +142,7 @@ public class MainActivity extends ActionBarActivity {
         startActivityForResult(Intent.createChooser(intent, "Foto auswählen"), 1);
     }
 
-    // Aktualisieren der Liste der Fotos.
+    // Refreshing the list of fotos.
     public void populateList()
     {
         ArrayAdapter<Foto> adapter = new FotoListAdapter();
@@ -151,7 +151,7 @@ public class MainActivity extends ActionBarActivity {
         // List of taken pictures
     }
 
-    // Stellt die Option dar, dass Foto aufzunehmen.
+    // Displays the option to take a new picture.
     public void takeFoto()
     {
         try
@@ -168,7 +168,7 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
-    // Überschriebene Methode, die das ausgewählte oder geschossene Foto anzeigt.
+    // Overridden method that displays the chosen or newly taken picture.
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK && requestCode == 1)
@@ -183,7 +183,7 @@ public class MainActivity extends ActionBarActivity {
         }
     }
 
-    // Private Klasse, die die Liste mit der ListView aus dem Layout verbindet.
+    // Private class that links the list with the ListView from the layout.
     private class FotoListAdapter extends ArrayAdapter <Foto> {
         public FotoListAdapter() {
             super(MainActivity.this, R.layout.fotolist_item, fotos);
