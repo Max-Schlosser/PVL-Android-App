@@ -73,22 +73,26 @@ public class MainActivity extends ActionBarActivity {
         foto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
-                builder.setTitle("Wähle weise:");
-                CharSequence[] options = new CharSequence[] {"Foto machen", "Foto auswählen"};
-                builder.setItems(options, new DialogInterface.OnClickListener() {
+                final String items[] = {"Foto schießen","Foto auswählen"};
+                AlertDialog.Builder dialog = new AlertDialog.Builder (MainActivity.this);
+                dialog.setTitle("Wählen Sie:");
+                dialog.setNegativeButton("Abbrechen", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        if (which == 0) {
+                        dialog.cancel();
+                    }
+                });
+                dialog.setItems(items, new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface d, int choice) {
+                        if (choice == 0) {
                             takeFoto();
-                        }
-                        if (which == 1) {
+                        } else if (choice == 1) {
                             chooseFoto();
                         }
                     }
                 });
-                builder.setNegativeButton("Abbrechen", null);
-                builder.create().show();
+                dialog.show();
             }
         });
 
