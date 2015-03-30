@@ -2,9 +2,6 @@ package com.example.StephanWagener.quanpic;
 
 import android.net.Uri;
 
-import java.io.File;
-import java.util.ArrayList;
-
 /**
  * Created by StephanWagener on 06.03.2015.
  * Um Foto-Objekte zu erzeugen, die in der ListView angezeigt werden.
@@ -12,15 +9,13 @@ import java.util.ArrayList;
 public class Foto
 {
     String name;
-    Uri foto;
-    ArrayList<File> arrayOfPictures = new ArrayList<File>();
+    Uri fotoImage;
 
 
-    public Foto (String fotoName, Uri image, File picture)
+    public Foto (String fotoName, Uri image)
     {
         name = fotoName;
-        foto = image;
-        arrayOfPictures.add(picture);
+        fotoImage = image;
     }
 
     public String getFotoName()
@@ -30,6 +25,6 @@ public class Foto
 
     public Uri getFotoImage()
     {
-        return foto;
+        return fotoImage;
     }
 }

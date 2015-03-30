@@ -24,6 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 // Main Class. Links layout and implementation.
@@ -35,7 +36,7 @@ public class MainActivity extends ActionBarActivity {
     TextView name;
     ImageView foto;
     ListView listView;
-    List<Foto> fotos;
+    List<Foto> fotos = new ArrayList<Foto>();
     Uri imageUri;
     File bildFile = new File(Environment.getExternalStorageDirectory() + "\\Fotoapp\\" + System.currentTimeMillis() +".png" );
 
@@ -119,10 +120,10 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Das Bild wurde gespeichert.", Toast.LENGTH_SHORT).show();
-                fotos.add(new Foto(name.getText().toString(), imageUri, bildFile));
+                fotos.add(new Foto(bildFile.getName(), imageUri));
                 populateList();
 
-                // adapter foto insert
+                // adapter fotoImage insert
             }
         });
 
@@ -137,7 +138,7 @@ public class MainActivity extends ActionBarActivity {
         });
     }
 
-    // Displays the option to choose a foto from the gallery.
+    // Displays the option to choose a fotoImage from the gallery.
     public void chooseFoto()
     {
         Intent intent = new Intent();
