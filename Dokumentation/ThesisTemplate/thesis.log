@@ -1,0 +1,398 @@
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2013.4.24)  27 JAN 2015 14:59
+entering extended mode
+**thesis.tex
+(C:\Users\Strutz\Documents\HfT\Departement\Institut-KT\WWW-dev\Files\ThesisTemplate\thesis.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, arabic, armenian, assamese, basque, bengali
+, bokmal, bulgarian, catalan, coptic, croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, galic
+ian, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, icelandic, indonesian, interlingua, irish, italian,
+ kannada, kurmanji, latin, latvian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, ngerman
+-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, romanian, russian, sanskrit, serbian, slovak, sloven
+ian, spanish, swedish, swissgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usenglishmax, w
+elsh, loaded.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\report.cls"
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size12.clo"
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: dvips.def on input line 91.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\dvips.def"
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+\epsfxsize=\dimen105
+\epsfysize=\dimen106
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ansinew.def"
+File: ansinew.def 2008/03/30 v1.1d Input encoding file
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\latin1.def"
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.sty"
+Package: babel 2008/07/08 v3.8m The Babel package
+
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
+File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\ngermanb.ldf"
+Language: ngermanb 2008/07/06 v2.6n new German support from the babel system
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.def"
+File: babel.def 2008/07/08 v3.8m Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen107
+)
+\l@naustrian = a dialect from \language\l@ngerman 
+Package babel Info: Making " an active character on input line 92.
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks17
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks18
+\ex@=\dimen108
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen109
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count89
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count90
+\leftroot@=\count91
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count92
+\DOTSCASE@=\count93
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen110
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count94
+\c@MaxMatrixCols=\count95
+\dotsspace@=\muskip10
+\c@parentequation=\count96
+\dspbrk@lvl=\count97
+\tag@help=\toks19
+\row@=\count98
+\column@=\count99
+\maxfields@=\count100
+\andhelp@=\toks20
+\eqnshift@=\dimen111
+\alignsep@=\dimen112
+\tagshift@=\dimen113
+\tagwidth@=\dimen114
+\totwidth@=\dimen115
+\lineht@=\dimen116
+\@envbody=\toks21
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\color.sty"
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: dvips.def on input line 130.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\dvipsnam.def"
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+(C:\Users\Strutz\AppData\Roaming\MiKTeX\2.9\tex\latex\titlesec\titlesec.sty
+Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
+\ttl@box=\box28
+\beforetitleunit=\skip46
+\aftertitleunit=\skip47
+\ttl@plus=\dimen117
+\ttl@minus=\dimen118
+\ttl@toksa=\toks23
+\titlewidth=\dimen119
+\titlewidthlast=\dimen120
+\titlewidthfirst=\dimen121
+)
+(C:\Users\Strutz\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.sty
+\lst@mode=\count101
+\lst@gtempboxa=\box29
+\lst@token=\toks24
+\lst@length=\count102
+\lst@currlwidth=\dimen122
+\lst@column=\count103
+\lst@pos=\count104
+\lst@lostspace=\dimen123
+\lst@width=\dimen124
+\lst@newlines=\count105
+\lst@lineno=\count106
+\lst@maxwidth=\dimen125
+
+(C:\Users\Strutz\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstmisc.sty
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+\c@lstnumber=\count107
+\lst@skipnumbers=\count108
+\lst@framebox=\box30
+)
+(C:\Users\Strutz\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.cfg
+File: listings.cfg 2007/02/22 1.4 listings configuration
+))
+Package: listings 2007/02/22 1.4 (Carsten Heinz)
+
+(C:\Users\Strutz\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang1.sty
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+)
+(C:\Users\Strutz\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstmisc.sty
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+)
+(C:\Users\Strutz\AppData\Roaming\MiKTeX\2.9\tex\latex\dstroke\dsfont.sty
+Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
+)
+(C:\Users\Strutz\Documents\HfT\Departement\Institut-KT\WWW-dev\Files\ThesisTemplate\thesis.sty
+\boxwidth=\dimen126
+\boxwidtha=\dimen127
+)
+(C:\Users\Strutz\Documents\HfT\Departement\Institut-KT\WWW-dev\Files\ThesisTemplate\thesis.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+\c@lstlisting=\count109
+
+(C:\Users\Strutz\Documents\HfT\Departement\Institut-KT\WWW-dev\Files\ThesisTemplate\titel.tex) [1
+
+] [2
+
+]
+(C:\Users\Strutz\Documents\HfT\Departement\Institut-KT\WWW-dev\Files\ThesisTemplate\kurzreferat.tex
+LaTeX Font Info:    Try loading font information for U+msa on input line 13.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 13.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)) [3
+
+] [4
+
+]
+(C:\Users\Strutz\Documents\HfT\Departement\Institut-KT\WWW-dev\Files\ThesisTemplate\formel.tex
+LaTeX Font Info:    Try loading font information for U+dsrom on input line 28.
+
+(C:\Users\Strutz\AppData\Roaming\MiKTeX\2.9\tex\latex\dstroke\udsrom.fd
+File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
+)) [1
+
+] [2
+
+]
+(C:\Users\Strutz\Documents\HfT\Departement\Institut-KT\WWW-dev\Files\ThesisTemplate\thesis.toc [3
+
+])
+\tf@toc=\write3
+ [4]
+(C:\Users\Strutz\Documents\HfT\Departement\Institut-KT\WWW-dev\Files\ThesisTemplate\einleitung.tex
+Kapitel 1.
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--24
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--30
+
+ []
+
+) (C:\Users\Strutz\Documents\HfT\Departement\Institut-KT\WWW-dev\Files\ThesisTemplate\grundlagen.tex [1
+
+
+]
+Kapitel 2.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 32.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 32.
+
+Overfull \hbox (15.07272pt too wide) in paragraph at lines 33--34
+[]\OT1/cmr/m/n/12 Wissenschaftliches Ar-bei-ten heit ob-jek-tiv be-gr[]unden. Ver-zich-ten Sie auf gef[]uhlsm[]aige
+ []
+
+[2
+
+] [3] [4]
+File: ./Bilder/YUV2_all.eps Graphic file (type eps)
+ <./Bilder/YUV2_all.eps>
+Underfull \vbox (badness 7379) has occurred while \output is active []
+
+ [5])
+(C:\Users\Strutz\Documents\HfT\Departement\Institut-KT\WWW-dev\Files\ThesisTemplate\hauptteil.tex [6]
+Kapitel 3.
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <8> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 35.
+[7
+
+] (C:\Users\Strutz\Documents\HfT\Departement\Institut-KT\WWW-dev\Files\ThesisTemplate\Quellcode/adressierung.c))
+(C:\Users\Strutz\Documents\HfT\Departement\Institut-KT\WWW-dev\Files\ThesisTemplate\zusammen.tex [8]
+Kapitel 4.
+) [9
+
+] [10
+
+] (C:\Users\Strutz\Documents\HfT\Departement\Institut-KT\WWW-dev\Files\ThesisTemplate\literatur.tex) [11
+
+]
+[12
+
+] (C:\Users\Strutz\Documents\HfT\Departement\Institut-KT\WWW-dev\Files\ThesisTemplate\erklaerung.tex
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
+
+ []
+
+
+Overfull \hbox (15.92651pt too wide) in paragraph at lines 17--18
+[]\OT1/cmr/m/n/10.95 Stellen, die w[]ortlich oder sinn-gem[]a aus ver[]offentlichten oder noch nicht ver[]offentlichten
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--25
+
+ []
+
+) [13
+
+] [14
+
+] (C:\Users\Strutz\Documents\HfT\Departement\Institut-KT\WWW-dev\Files\ThesisTemplate\append_all.tex
+Anhang A.
+[15
+
+]
+Anhang B.
+File: ./Bilder/latex2dvi_tex.eps Graphic file (type eps)
+<./Bilder/latex2dvi_tex.eps>
+File: ./Bilder/latex2dvi_viewer.eps Graphic file (type eps)
+ <./Bilder/latex2dvi_viewer.eps>
+File: ./Bilder/latex2PS2PDF_Nachb_DviPs.eps Graphic file (type eps)
+ <./Bilder/latex2PS2PDF_Nachb_DviPs.eps>
+File: ./Bilder/latex2PS2PDF_Nachb_Ghost.eps Graphic file (type eps)
+
+<./Bilder/latex2PS2PDF_Nachb_Ghost.eps>
+File: ./Bilder/latex2PS2PDF_viewer.eps Graphic file (type eps)
+ <./Bilder/latex2PS2PDF_viewer.eps> [16
+
+] [17] [18]
+File: ./Bilder/template.eps Graphic file (type eps)
+ <./Bilder/template.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [19]
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 140.
+ [20]
+Anhang C.
+[21
+
+] [22]
+Anhang D.
+)
+File: ./Bilder/./authoring.eps Graphic file (type eps)
+ <./Bilder/./authoring.eps> [23
+
+]
+(C:\Users\Strutz\Documents\HfT\Departement\Institut-KT\WWW-dev\Files\ThesisTemplate\thesis.aux) ) 
+Here is how much of TeX's memory you used:
+ 4327 strings out of 493922
+ 58107 string characters out of 3144896
+ 150856 words of memory out of 3000000
+ 7514 multiletter control sequences out of 15000+200000
+ 20267 words of font info for 82 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 30i,15n,49p,893b,1691s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on thesis.dvi (31 pages, 79876 bytes).

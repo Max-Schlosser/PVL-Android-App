@@ -1,0 +1,115 @@
+%
+\documentclass[12pt,a4paper,ngerman,twoside]{report}
+%\documentclass[12pt,twoside]{report}
+%
+%
+\usepackage[dvips]{graphics}
+\graphicspath{{./Bilder/}}
+\usepackage{epsfig}
+\usepackage[ansinew,latin1]{inputenc} % wichtig für Umlaute
+\usepackage{babel}
+\usepackage{amssymb}
+\usepackage{amsmath} % wichtig für die align-Umgebung in Formeln
+% für das Einbinden von Quelltexte
+\usepackage{color} 
+\usepackage{titlesec} % Textüberschriften anpassen
+
+\definecolor{middlegray}{rgb}{.6,0.6,.6}      % grau
+
+\usepackage{listings} 
+\lstset{numbers=left, numberstyle=\tiny, numbersep=5pt} 
+\lstset{language=C}
+\lstset{
+   basicstyle=\scriptsize\ttfamily,
+   keywordstyle=\bfseries\ttfamily\color{blue},
+   stringstyle=\color{green}\ttfamily,
+   commentstyle=\color{middlegray}\ttfamily,
+   emph={square}, 
+   emphstyle=\color{blue}\texttt,
+   emph={[2]root,base},
+   emphstyle={[2]\color{yac}\texttt},
+   showstringspaces=false,
+   flexiblecolumns=false,
+   tabsize=2,
+   numbers=left,
+   numberstyle=\tiny,
+   numberblanklines=false,
+   stepnumber=1,
+   numbersep=10pt,
+   xleftmargin=15pt
+ }
+
+
+
+\usepackage{dsfont}
+%
+\usepackage{thesis}
+	%
+
+\begin{document}
+
+\pagestyle{empty}   % Rueckseite des titelblattes
+	%
+%
+\input{titel} % 
+	%
+\cleardoublepage
+%
+\input{kurzreferat} % 
+	%
+\cleardoublepage
+
+\input{formel}
+\pagestyle{headings}
+\pagenumbering{roman}
+%\setcounter{page}{2}
+	%
+	%
+\cleardoublepage
+\tableofcontents
+\cleardoublepage
+%
+\pagenumbering{arabic}
+	%
+	%
+%\listoffigures
+%\listoftables
+%\cleardoublepage
+	%
+\renewcommand{\baselinestretch}{1.1}
+\small\normalsize
+%\setlength{\parskip}{0.2\baselineskip plus 0.3ex minus 0.1ex}
+%
+
+%
+%-------------------------------------------------------
+%
+% nuetzliche Definitionen siehe thesis.sty
+%
+%-------------------------------------------------------
+%
+	%
+\input{einleitung}
+\input{grundlagen}
+\input{hauptteil}
+\input{zusammen}
+	%
+\renewcommand{\baselinestretch}{1.0}
+\small
+\cleardoublepage
+\input{literatur}
+	%
+\cleardoublepage
+\pagestyle{plain}
+
+\input{erklaerung}
+
+\cleardoublepage
+
+\input{append_all}
+% set the correct properties of final pdf file
+% as the hyperref settings are overwritten by all *.eps files
+\includegraphics{./authoring.eps}
+
+	%
+\end{document}
