@@ -1,16 +1,16 @@
 package com.example.StephanWagener.quanpic;
 
 // Imports needed for used functionalities.
+
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -22,6 +22,10 @@ import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
+import org.opencv.*;
+import org.opencv.android.NativeCameraView;
+import org.opencv.android.OpenCVLoader;
+import org.opencv.engine3.OpenCVEngineInterface;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -150,7 +154,7 @@ public class MainActivity extends ActionBarActivity {
     // Refreshing the list of fotos.
     public void populateList()
     {
-        ArrayAdapter<Foto> adapter = new FotoListAdapter();
+        ArrayAdapter adapter = new FotoListAdapter();
         listView.setAdapter(adapter);
 
         // List of taken pictures
@@ -176,14 +180,15 @@ public class MainActivity extends ActionBarActivity {
     // Overridden method that displays the chosen or newly taken picture.
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (resultCode == RESULT_OK && requestCode == 1)
+        if (resultCode == RESULT_OK && requestCode == 2)
         {
             imageUri = data.getData();
             foto.setImageURI(data.getData());
         }
-        else if (resultCode == RESULT_OK && requestCode == 2)
+        else if (resultCode == RESULT_OK && requestCode == 1)
         {
-            Bitmap bild = BitmapFactory.decodeFile(bildFile.getAbsolutePath());
+            Bundle bundle = data.getExtras();
+            Bitmap bild = (Bitmap) bundle.get("data");
             foto.setImageBitmap(bild);
         }
     }
