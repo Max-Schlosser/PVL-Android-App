@@ -15,7 +15,6 @@ import org.opencv.android.CameraBridgeViewBase;
 import org.opencv.android.LoaderCallbackInterface;
 import org.opencv.android.OpenCVLoader;
 import org.opencv.core.Mat;
-import org.opencv.highgui.Highgui;
 import org.opencv.imgproc.Imgproc;
 
 // Main Class. Links layout and implementation.
@@ -30,7 +29,7 @@ public class MainActivity extends ActionBarActivity {
                 case LoaderCallbackInterface.SUCCESS:
                 {
                     cameraView.enableView();
-                    run();
+                    setFunctionality();
                 } break;
                 default:
                 {
@@ -45,30 +44,28 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+//TODO der FULLSCREEN muss noch umgesetzt werden!!!
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
         cameraView = (CameraBridgeViewBase) findViewById(R.id.HelloOpenCvView);
     }
 
-    private void run()
+    private void setFunctionality()
     {
         cameraView.setVisibility(SurfaceView.VISIBLE);
         cameraView.setCvCameraViewListener(new CameraBridgeViewBase.CvCameraViewListener2() {
 
             @Override
-            public void onCameraViewStopped() {
-                // TODO Auto-generated method stub
-            }
+            public void onCameraViewStopped() {}
 
             @Override
-            public void onCameraViewStarted(int width, int height) {
-                // TODO Auto-generated method stub
-            }
+            public void onCameraViewStarted(int width, int height) {}
 
             @Override
-            public Mat onCameraFrame(CameraBridgeViewBase.CvCameraViewFrame inputFrame) {
+            public Mat onCameraFrame(CameraBridgeViewBase.CvCameraViewFrame inputFrame)
+            {
+                //TODO Implementierung für die Quantisierungsverfahren.
                 Mat rgb = inputFrame.rgba();
                 Mat gray = new Mat();
                 Imgproc.cvtColor(rgb, gray, Imgproc.COLOR_RGB2GRAY);
@@ -80,6 +77,7 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 Toast.makeText(getApplicationContext(), "Sie haben geklickt.", Toast.LENGTH_SHORT).show();
+                //TODO mit einem Klick sollte hier zwischen der Verfahren gewechselt werden. Gibt auch andere Möglichkeiten.
                 return true;
             }
         });
