@@ -2,47 +2,43 @@ package com.example.StephanWagener.quanpic;
 
 // Imports needed for used functionalities.
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.view.MotionEvent;
+import android.view.SurfaceView;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TabHost;
-import android.widget.TextView;
+import android.view.WindowManager;
 import android.widget.Toast;
-import org.opencv.*;
-import org.opencv.android.NativeCameraView;
-import org.opencv.android.OpenCVLoader;
-import org.opencv.engine3.OpenCVEngineInterface;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
+import org.opencv.android.BaseLoaderCallback;
+import org.opencv.android.CameraBridgeViewBase;
+import org.opencv.android.LoaderCallbackInterface;
+import org.opencv.android.OpenCVLoader;
+import org.opencv.core.Mat;
+import org.opencv.highgui.Highgui;
+import org.opencv.imgproc.Imgproc;
 
 // Main Class. Links layout and implementation.
 public class MainActivity extends ActionBarActivity {
 
     // Global variables
-    Button saveButton;
-    Button analyseButton;
-    TextView name;
-    ImageView foto;
-    ListView listView;
-    List<Foto> fotos = new ArrayList<Foto>();
-    Uri imageUri;
-    File bildFile = new File(Environment.getExternalStorageDirectory() + "\\Fotoapp\\" + System.currentTimeMillis() +".png" );
+    CameraBridgeViewBase cameraView;
+    private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
+        @Override
+        public void onManagerConnected(int status) {
+            switch (status) {
+                case LoaderCallbackInterface.SUCCESS:
+                {
+                    cameraView.enableView();
+                    run();
+                } break;
+                default:
+                {
+                    super.onManagerConnected(status);
+                } break;
+            }
+        }
+    };
 
     // Initializing required elements when starting the application.
     @Override
@@ -50,167 +46,64 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Initializing GUI elements through the given layout ID.
-        saveButton = (Button) findViewById(R.id.buttonSave);
-        analyseButton = (Button) findViewById(R.id.buttonAnalyse);
-        name = (TextView) findViewById(R.id.fotoName);
-        foto = (ImageView) findViewById(R.id.imageView);
-        listView = (ListView) findViewById(R.id.fotoListView);
-
-        // Disabling save button and initializing tabs.
-        saveButton.setEnabled(false);
-        TabHost fotoTabHost = (TabHost) findViewById(R.id.tabHost);
-        fotoTabHost.setup();
-
-        TabHost.TabSpec tabSpec = fotoTabHost.newTabSpec("maker");
-        tabSpec.setContent(R.id.tabFotoMaker);
-        tabSpec.setIndicator("FotoMaker");
-        fotoTabHost.addTab(tabSpec);
-
-        tabSpec = fotoTabHost.newTabSpec("list");
-        tabSpec.setContent(R.id.tabFotoList);
-        tabSpec.setIndicator("FotoList");
-        fotoTabHost.addTab(tabSpec);
-
-        // Determining functionalities to be executed when the image is clicked.
-        foto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final String items[] = {"Foto schießen","Foto auswählen"};
-                AlertDialog.Builder dialog = new AlertDialog.Builder (MainActivity.this);
-                dialog.setTitle("Wählen Sie:");
-                dialog.setNegativeButton("Abbrechen", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-                dialog.setItems(items, new DialogInterface.OnClickListener() {
-
-                    public void onClick(DialogInterface d, int choice) {
-                        if (choice == 0) {
-                            takeFoto();
-                        } else if (choice == 1) {
-                            chooseFoto();
-                        }
-                    }
-                });
-                dialog.show();
-            }
-        });
-
-        // Checking for an empty string or one that consists only of whitespaces.
-        // If that is the case, the button does not get activated.
-        name.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                // save button is enable if the text is not equal to null or only consist of spaces
-                saveButton.setEnabled(!name.getText().toString().trim().equals(""));
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-
-        // Save-button functionalities.
-        saveButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Das Bild wurde gespeichert.", Toast.LENGTH_SHORT).show();
-                fotos.add(new Foto(bildFile.getName(), imageUri));
-                populateList();
-
-                // adapter fotoImage insert
-            }
-        });
-
-        // Analyze-button functionalities.
-        analyseButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Die Analyse war erfolgreich.", Toast.LENGTH_SHORT).show();
-
-                // quantisation have to implement here
-            }
-        });
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.activity_main);
+        cameraView = (CameraBridgeViewBase) findViewById(R.id.HelloOpenCvView);
     }
 
-    // Displays the option to choose a fotoImage from the gallery.
-    public void chooseFoto()
+    private void run()
     {
-        Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent, "Foto auswählen"), 1);
+        cameraView.setVisibility(SurfaceView.VISIBLE);
+        cameraView.setCvCameraViewListener(new CameraBridgeViewBase.CvCameraViewListener2() {
+
+            @Override
+            public void onCameraViewStopped() {
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void onCameraViewStarted(int width, int height) {
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public Mat onCameraFrame(CameraBridgeViewBase.CvCameraViewFrame inputFrame) {
+                Mat rgb = inputFrame.rgba();
+                Mat gray = new Mat();
+                Imgproc.cvtColor(rgb, gray, Imgproc.COLOR_RGB2GRAY);
+                return gray;
+            }
+        });
+
+        cameraView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                Toast.makeText(getApplicationContext(), "Sie haben geklickt.", Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        });
     }
 
-    // Refreshing the list of fotos.
-    public void populateList()
-    {
-        ArrayAdapter adapter = new FotoListAdapter();
-        listView.setAdapter(adapter);
-
-        // List of taken pictures
-    }
-
-    // Displays the option to take a new picture.
-    public void takeFoto()
-    {
-        try
-        {
-            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            intent.putExtra(MediaStore.EXTRA_OUTPUT, bildFile);
-            startActivityForResult(intent, 1);
-        }
-        catch(Exception e)
-        {
-            e.printStackTrace();
-            Toast.makeText(getApplicationContext(), "Keine kompatible Kamera.", Toast.LENGTH_SHORT).show();
-        }
-
-    }
-
-    // Overridden method that displays the chosen or newly taken picture.
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (resultCode == RESULT_OK && requestCode == 2)
-        {
-            imageUri = data.getData();
-            foto.setImageURI(data.getData());
-        }
-        else if (resultCode == RESULT_OK && requestCode == 1)
-        {
-            Bundle bundle = data.getExtras();
-            Bitmap bild = (Bitmap) bundle.get("data");
-            foto.setImageBitmap(bild);
-        }
+    public void onPause()
+    {
+        super.onPause();
+        if (cameraView != null)
+            cameraView.disableView();
     }
 
-    // Private class that links the list with the ListView from the layout.
-    private class FotoListAdapter extends ArrayAdapter <Foto> {
-        public FotoListAdapter() {
-            super(MainActivity.this, R.layout.fotolist_item, fotos);
-        }
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (cameraView != null)
+            cameraView.disableView();
+    }
 
-        @Override
-        public View getView(int position, View view, ViewGroup parent) {
-            if (view == null) {
-                view = getLayoutInflater().inflate(R.layout.fotolist_item, parent, false);
-            }
-            Foto currentFoto = fotos.get(position);
-            TextView name = (TextView) findViewById(R.id.listFotoName);
-            name.setText(currentFoto.getFotoName());
-            ImageView fotoListItem = (ImageView) findViewById(R.id.listFotoImage);
-            fotoListItem.setImageURI(currentFoto.getFotoImage());
-
-            return view;
-        }
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_9, this, mLoaderCallback);
     }
 }
