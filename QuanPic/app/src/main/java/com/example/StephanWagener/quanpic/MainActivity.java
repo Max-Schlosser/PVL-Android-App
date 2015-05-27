@@ -21,7 +21,8 @@ import org.opencv.imgproc.Imgproc;
 public class MainActivity extends ActionBarActivity {
 
     // Global variables
-    CameraBridgeViewBase cameraView;
+    private CameraBridgeViewBase cameraView;
+    private boolean isMedianCut = true;
     private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
         @Override
         public void onManagerConnected(int status) {
@@ -38,6 +39,7 @@ public class MainActivity extends ActionBarActivity {
             }
         }
     };
+    private CameraBridgeViewBase.CvCameraViewFrame currentInputFrame;
 
     // Initializing required elements when starting the application.
     @Override
@@ -65,23 +67,67 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public Mat onCameraFrame(CameraBridgeViewBase.CvCameraViewFrame inputFrame)
             {
-                //TODO Implementierung für die Quantisierungsverfahren.
-                Mat rgb = inputFrame.rgba();
-                Mat gray = new Mat();
-                Imgproc.cvtColor(rgb, gray, Imgproc.COLOR_RGB2GRAY);
-                return gray;
+                currentInputFrame = inputFrame;
+                if (isMedianCut)
+                {
+                    //TODO median cut implementation
+                    Mat rgb = inputFrame.rgba();
+                    Mat gray = new Mat();
+                    Imgproc.cvtColor(rgb, gray, Imgproc.COLOR_RGB2GRAY);
+                    return gray;
+                }
+                else
+                {
+                    //TODO population implementation
+                    return inputFrame.rgba();
+                }
             }
         });
 
         cameraView.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                Toast.makeText(getApplicationContext(), "Sie haben geklickt.", Toast.LENGTH_SHORT).show();
-                //TODO mit einem Klick sollte hier zwischen der Verfahren gewechselt werden. Gibt auch andere Möglichkeiten.
-                return true;
+            public boolean onTouch(View v, MotionEvent event)
+            {
+
+                if (event.getActionMasked() == MotionEvent.ACTION_DOWN)
+                {
+                    //saveImage(currentInputFrame.rgba());
+
+                    isMedianCut = !isMedianCut;
+                    if (isMedianCut)
+                    {
+                        Toast.makeText(getApplicationContext(), "Das \"Median-Cut-Verfahren\" wurde aktiviert.", Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                    {
+                        Toast.makeText(getApplicationContext(), "Das \"Popularitätsverfahren\" wurde aktiviert.", Toast.LENGTH_SHORT).show();
+                    }
+                    return true;
+
+                }
+                return false;
             }
         });
     }
+
+ /**   public void saveImage (Mat mat) {
+        Mat mIntermediateMat = new Mat();
+
+        Imgproc.cvtColor(mat, mIntermediateMat, Imgproc.COLOR_RGBA2BGR, 3);
+
+        File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+        String filename = "image.jpg";
+        File file = new File(path, filename);
+
+        Boolean bool = null;
+        filename = file.toString();
+        bool = Highgui.imwrite(filename, mIntermediateMat);
+
+        if (bool == true)
+            Toast.makeText(getApplicationContext(), "SUCCESS writing image to external storage", Toast.LENGTH_SHORT).show();
+        else
+            Toast.makeText(getApplicationContext(), "Fail writing image to external storage", Toast.LENGTH_SHORT).show();
+    } */
 
     @Override
     public void onPause()
