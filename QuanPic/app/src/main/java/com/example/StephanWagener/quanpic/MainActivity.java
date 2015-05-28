@@ -26,6 +26,8 @@ import org.opencv.imgproc.Imgproc;
 
 import java.io.File;
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 // Main Class. Links layout and implementation.
 public class MainActivity extends Activity {
@@ -143,8 +145,9 @@ public class MainActivity extends Activity {
             Imgproc.cvtColor(mat, mIntermediateMat, Imgproc.COLOR_GRAY2BGRA, 3);
         }
 
-        File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
-        String filename = "image" + DateFormat.getDateTimeInstance().toString() + ".png";
+        File path = new File(Environment.getExternalStorageDirectory() + "/Images/");
+        path.mkdirs();
+        String filename = "quanpic" + new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss").format(new Date()) + ".png";
         File file = new File(path, filename);
 
         Boolean bool = null;
