@@ -3,7 +3,10 @@ package com.example.StephanWagener.quanpic;
 // Imports needed for used functionalities.
 
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.view.View;
@@ -15,7 +18,10 @@ import org.opencv.android.CameraBridgeViewBase;
 import org.opencv.android.LoaderCallbackInterface;
 import org.opencv.android.OpenCVLoader;
 import org.opencv.core.Mat;
+import org.opencv.highgui.Highgui;
 import org.opencv.imgproc.Imgproc;
+
+import java.io.File;
 
 // Main Class. Links layout and implementation.
 public class MainActivity extends ActionBarActivity {
@@ -30,7 +36,6 @@ public class MainActivity extends ActionBarActivity {
                 case LoaderCallbackInterface.SUCCESS:
                 {
                     cameraView.enableView();
-                    setFunctionality();
                 } break;
                 default:
                 {
@@ -40,17 +45,21 @@ public class MainActivity extends ActionBarActivity {
         }
     };
     private CameraBridgeViewBase.CvCameraViewFrame currentInputFrame;
+    private MenuItem popItem;
+    private MenuItem medItm;
 
     // Initializing required elements when starting the application.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-//TODO der FULLSCREEN muss noch umgesetzt werden!!!
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        setContentView(R.layout.activity_main);
+//TODO der FULLSCREEN muss noch umgesetzt werden!!!
         setContentView(R.layout.activity_main);
         cameraView = (CameraBridgeViewBase) findViewById(R.id.HelloOpenCvView);
+        setFunctionality();
     }
 
     private void setFunctionality()
@@ -91,26 +100,15 @@ public class MainActivity extends ActionBarActivity {
 
                 if (event.getActionMasked() == MotionEvent.ACTION_DOWN)
                 {
-                    //saveImage(currentInputFrame.rgba());
-
-                    isMedianCut = !isMedianCut;
-                    if (isMedianCut)
-                    {
-                        Toast.makeText(getApplicationContext(), "Das \"Median-Cut-Verfahren\" wurde aktiviert.", Toast.LENGTH_SHORT).show();
-                    }
-                    else
-                    {
-                        Toast.makeText(getApplicationContext(), "Das \"Popularitätsverfahren\" wurde aktiviert.", Toast.LENGTH_SHORT).show();
-                    }
+                    saveImage(currentInputFrame.rgba());
                     return true;
-
                 }
                 return false;
             }
         });
     }
 
- /**   public void saveImage (Mat mat) {
+    public void saveImage (Mat mat) {
         Mat mIntermediateMat = new Mat();
 
         Imgproc.cvtColor(mat, mIntermediateMat, Imgproc.COLOR_RGBA2BGR, 3);
@@ -124,10 +122,10 @@ public class MainActivity extends ActionBarActivity {
         bool = Highgui.imwrite(filename, mIntermediateMat);
 
         if (bool == true)
-            Toast.makeText(getApplicationContext(), "SUCCESS writing image to external storage", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Ihr Bild wurde erfolgreich gespeichert.", Toast.LENGTH_SHORT).show();
         else
-            Toast.makeText(getApplicationContext(), "Fail writing image to external storage", Toast.LENGTH_SHORT).show();
-    } */
+            Toast.makeText(getApplicationContext(), "Beim Speichern des Bildes ist ein Fehler aufgetreten!", Toast.LENGTH_SHORT).show();
+    }
 
     @Override
     public void onPause()
@@ -148,6 +146,37 @@ public class MainActivity extends ActionBarActivity {
     public void onResume()
     {
         super.onResume();
-        OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_9, this, mLoaderCallback);
+        if (!OpenCVLoader.initDebug())
+        {
+            OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_9, this, mLoaderCallback);
+        }
+        else
+        {
+            mLoaderCallback.onManagerConnected(LoaderCallbackInterface.SUCCESS);
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        popItem = menu.add("Popularitätsverfahren");
+        medItm = menu.add("Median-Cut-Verfahren");
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        if (item == popItem)
+        {
+            isMedianCut = false;
+            Toast.makeText(getApplicationContext(), "Das \"Popularitätsverfahren\" wurde aktiviert.", Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            isMedianCut = true;
+            Toast.makeText(getApplicationContext(), "Das \"Median-Cut-Verfahren\" wurde aktiviert.", Toast.LENGTH_SHORT).show();
+        }
+        return true;
     }
 }
