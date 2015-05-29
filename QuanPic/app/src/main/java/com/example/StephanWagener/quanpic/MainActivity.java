@@ -5,10 +5,6 @@ package com.example.StephanWagener.quanpic;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.v7.app.ActionBarActivity;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.view.View;
@@ -19,13 +15,12 @@ import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraBridgeViewBase;
 import org.opencv.android.LoaderCallbackInterface;
 import org.opencv.android.OpenCVLoader;
-import org.opencv.core.CvException;
+import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.highgui.Highgui;
 import org.opencv.imgproc.Imgproc;
 
 import java.io.File;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -36,6 +31,7 @@ public class MainActivity extends Activity {
     private CameraBridgeViewBase cameraView;
     private boolean isMedianCut = true;
     long time = 0;
+    private Mat currentInput;
     private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
         @Override
         public void onManagerConnected(int status) {
@@ -51,9 +47,6 @@ public class MainActivity extends Activity {
             }
         }
     };
-    private Mat currentInput;
-    private MenuItem popItem;
-    private MenuItem medItm;
 
     // Initializing required elements when starting the application.
     @Override
@@ -83,12 +76,12 @@ public class MainActivity extends Activity {
             {
                 if (isMedianCut)
                 {
-                    //TODO median cut implementation
-                    Mat rgb = inputFrame.rgba();
-                    Mat gray = new Mat();
-                    Imgproc.cvtColor(rgb, gray, Imgproc.COLOR_RGB2GRAY);
-                    currentInput = gray;
-                    return gray;
+                    Mat convertedMat = new Mat();
+                    Mat medianFilteredMat = new Mat();
+                    inputFrame.rgba().convertTo(convertedMat, CvType.CV_16U);
+                    Imgproc.medianBlur(convertedMat, medianFilteredMat, 3);
+                    currentInput = medianFilteredMat;
+                    return currentInput;
                 }
                 else
                 {
@@ -135,24 +128,14 @@ public class MainActivity extends Activity {
 
     public void saveImage (Mat mat) {
         Mat mIntermediateMat = new Mat();
-
-        try
-        {
-            Imgproc.cvtColor(mat, mIntermediateMat, Imgproc.COLOR_RGBA2BGRA, 3);
-        }
-        catch (CvException e)
-        {
-            Imgproc.cvtColor(mat, mIntermediateMat, Imgproc.COLOR_GRAY2BGRA, 3);
-        }
-
+        Imgproc.cvtColor(mat, mIntermediateMat, Imgproc.COLOR_RGBA2BGRA, 3);
         File path = new File(Environment.getExternalStorageDirectory() + "/Images/");
         path.mkdirs();
+
         String filename = "quanpic" + new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss").format(new Date()) + ".png";
         File file = new File(path, filename);
 
-        Boolean bool = null;
-        filename = file.toString();
-        bool = Highgui.imwrite(filename, mIntermediateMat);
+        Boolean bool = Highgui.imwrite(file.toString(), mIntermediateMat);;
 
         if (bool == true)
             Toast.makeText(getApplicationContext(), "Ihr Bild wurde erfolgreich gespeichert.", Toast.LENGTH_SHORT).show();
