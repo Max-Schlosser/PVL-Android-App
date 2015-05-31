@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import net.sourceforge.jiu.color.quantization.PopularityQuantizer;
+
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraBridgeViewBase;
 import org.opencv.android.LoaderCallbackInterface;
@@ -76,6 +78,7 @@ public class MainActivity extends Activity {
             {
                 if (isMedianCut)
                 {
+                   // new MedianCut(Bitmap.getPixels(),Bitmap.getHeight(),Bitmap.getWidth())  //Input Variablen für extern Mediancut
                     Mat convertedMat = new Mat();
                     Mat medianFilteredMat = new Mat();
                     inputFrame.rgba().convertTo(convertedMat, CvType.CV_16U);
@@ -86,6 +89,10 @@ public class MainActivity extends Activity {
                 else
                 {
                     //TODO population implementation
+                    Mat convertedMat = new Mat();
+                    Mat medianFilteredMat = new Mat();
+                    inputFrame.rgba().convertTo(convertedMat, CvType.CV_16U);
+                    new PopularityQuantizer();
                     currentInput = inputFrame.rgba();
                     return inputFrame.rgba();
                 }

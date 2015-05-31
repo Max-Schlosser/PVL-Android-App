@@ -3,11 +3,10 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 21
     buildToolsVersion '21.1.2'
-
     defaultConfig {
         applicationId "com.example.StephanWagener.quanpic"
-        minSdkVersion 15
-        targetSdkVersion 19
+        minSdkVersion 21
+        targetSdkVersion 21
         versionCode 1
         versionName "1.0"
     }
@@ -17,11 +16,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors {
+    }
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:21.0.3'
     compile project(':openCVLibrary249')
-    compile files('libs/ij.jar')
+    //compile files('libs/jui-0.14.3/jiu.jar')
+    compile files('jiu-0.14.3/jiu.jar')
 }
