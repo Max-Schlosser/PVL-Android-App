@@ -111,13 +111,15 @@ public class MainActivity extends Activity {
                     Highgui.imencode(".png", inputFrame.rgba(), matOfByte);
 
                     byte[] byteArray = new byte[(int) (inputFrame.rgba().total() * inputFrame.rgba().channels())];
-                    NeuQuant nq = new NeuQuant(byteArray, matOfByte.rows(), 1);
+                    NeuQuant nq = new NeuQuant(byteArray, inputFrame.rgba().rows(), 15);
 
-                    Mat mat = new Mat(0, 0, CvType.CV_8U);
+                    Mat jpegData = new Mat(inputFrame.rgba().rows(), inputFrame.rgba().cols(), CvType.CV_8UC3);
+                    jpegData.put(0, 0, nq.process().clone());
 
-                    mat.put(inputFrame.rgba().rows(), inputFrame.rgba().cols(), nq.process().clone());
-                    currentInput = mat;
-                    return mat;
+                    Mat bgrMat = Highgui.imdecode(jpegData, Highgui.IMREAD_COLOR);
+
+                    currentInput = bgrMat;
+                    return currentInput;
                 }
             }
         });
