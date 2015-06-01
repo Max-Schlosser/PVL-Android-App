@@ -106,10 +106,6 @@ public class MainActivity extends Activity {
                 else
                 {
                     //NeuQuant.
-                    MatOfByte matOfByte = new MatOfByte();
-
-                    Highgui.imencode(".png", inputFrame.rgba(), matOfByte);
-
                     byte[] byteArray = new byte[(int) (inputFrame.rgba().total() * inputFrame.rgba().channels())];
                     NeuQuant nq = new NeuQuant(byteArray, inputFrame.rgba().rows(), 15);
 
