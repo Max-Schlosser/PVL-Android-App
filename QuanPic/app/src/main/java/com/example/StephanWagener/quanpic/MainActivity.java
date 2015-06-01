@@ -14,7 +14,9 @@ import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraBridgeViewBase;
 import org.opencv.android.LoaderCallbackInterface;
 import org.opencv.android.OpenCVLoader;
+import org.opencv.core.CvType;
 import org.opencv.core.Mat;
+import org.opencv.core.MatOfByte;
 import org.opencv.highgui.Highgui;
 import org.opencv.imgproc.Imgproc;
 
@@ -102,9 +104,19 @@ public class MainActivity extends Activity {
                 }
                 else
                 {
-                    //Popularitätsverfahren.
-                    //TODO Pop
-                    return null;
+                    //NeuQuant.
+                    MatOfByte matOfByte = new MatOfByte();
+
+                    Highgui.imencode(".png", inputFrame.rgba(), matOfByte);
+
+                    byte[] byteArray = matOfByte.toArray();
+                    NeuQuant nq = new NeuQuant(byteArray, matOfByte.rows(), 15);
+
+                    Mat mat = new Mat(inputFrame.rgba().rows(), inputFrame.rgba().cols(), CvType.CV_8U);
+                    mat.put(0, 0, nq.process());
+
+                    currentInput = mat;
+                    return mat;
                 }
             }
         });
