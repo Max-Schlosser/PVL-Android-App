@@ -19,6 +19,7 @@ import org.opencv.core.Mat;
 import org.opencv.core.MatOfByte;
 import org.opencv.highgui.Highgui;
 import org.opencv.imgproc.Imgproc;
+import org.opencv.utils.Converters;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -109,12 +110,12 @@ public class MainActivity extends Activity {
 
                     Highgui.imencode(".png", inputFrame.rgba(), matOfByte);
 
-                    byte[] byteArray = matOfByte.toArray();
-                    NeuQuant nq = new NeuQuant(byteArray, matOfByte.rows(), 15);
+                    byte[] byteArray = new byte[(int) (inputFrame.rgba().total() * inputFrame.rgba().channels())];
+                    NeuQuant nq = new NeuQuant(byteArray, matOfByte.rows(), 1);
 
-                    Mat mat = new Mat(inputFrame.rgba().rows(), inputFrame.rgba().cols(), CvType.CV_8U);
-                    mat.put(0, 0, nq.process());
+                    Mat mat = new Mat(0, 0, CvType.CV_8U);
 
+                    mat.put(inputFrame.rgba().rows(), inputFrame.rgba().cols(), nq.process().clone());
                     currentInput = mat;
                     return mat;
                 }
