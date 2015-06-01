@@ -112,9 +112,9 @@ public class MainActivity extends Activity {
                     Mat jpegData = new Mat(inputFrame.rgba().rows(), inputFrame.rgba().cols(), CvType.CV_8UC3);
                     jpegData.put(0, 0, nq.process().clone());
 
-                    Mat bgrMat = Highgui.imdecode(jpegData, Highgui.IMREAD_COLOR);
+                    Mat mat = Highgui.imdecode(jpegData, Highgui.IMREAD_UNCHANGED);
 
-                    currentInput = bgrMat;
+                    currentInput = mat;
                     return currentInput;
                 }
             }
