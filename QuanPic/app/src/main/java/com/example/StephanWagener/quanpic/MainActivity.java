@@ -158,7 +158,7 @@ public class MainActivity extends Activity {
                         }
                         else if (!isMedianCut)
                         {
-                            Toast.makeText(getApplicationContext(), "Das \"Popularitätsverfahren\" wurde aktiviert.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Das \"NeuQuant-Verfahren\" wurde aktiviert.", Toast.LENGTH_SHORT).show();
                         }
                     }
                     else
